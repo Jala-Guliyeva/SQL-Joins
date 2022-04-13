@@ -47,7 +47,7 @@ ALTER TABLE Movies ADD Point int
 
 
 SELECT * FROM Movies
- Name.LEN>=10
+ LEN.Name>=10
 WHERE name  LIKE '%t' FROM Name,Duration,Genre.Name
 
 
