@@ -1,4 +1,5 @@
 CREATE DATABASE IMDb
+
 USE IMDb
 
 CREATE TABLE Directors(
@@ -41,13 +42,13 @@ CREATE TABLE MovieGenres(
 
 ALTER TABLE Movies ADD Point int
 
-SELECT  m.Name,Genres.Name,Directors.Name,Actors.Name WHERE Movies.Point > 6
-join Movies m
-on
 
 
-SELECT * FROM Movies WHERE Movies.Name LIKE '%t%'
 
+
+SELECT * FROM Movies
+ Name.LEN>=10
+WHERE name  LIKE '%t' FROM Name,Duration,Genre.Name
 
 
 
