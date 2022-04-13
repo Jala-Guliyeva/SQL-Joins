@@ -39,6 +39,15 @@ CREATE TABLE MovieGenres(
 	GenreId INT CONSTRAINT FK_GenreId FOREIGN KEY REFERENCES Genres(Id)
 )
 
+ALTER TABLE Movies ADD Point int
+
+SELECT  m.Name,Genres.Name,Directors.Name,Actors.Name WHERE Movies.Point > 6
+join Movies m
+on
+
+
+SELECT * FROM Movies WHERE Movies.Name LIKE '%t%'
+
 
 
 
