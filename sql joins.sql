@@ -76,6 +76,24 @@ ON MG.GenreId=G.Id
 SELECT * FROM V_Genres
 WHERE G.Name LIKE 'a%'
 
+--
+CREATE VIEW  V_ALLMOVIE
+AS
+SELECT M.Name 'Movies',
+M.ImdbPoint 'Imdbpoint',
+M.Duration 'Duration',
+G.Name 'Genres'
+FROM Movies AS M
+JOIN MovieGenres AS MG
+ON MG.MovieId=M.Id
+JOIN Genres  AS G
+ON MG.GenreId=G.Id
+
+SELECT Movies  FROM V_ALLMOVIE
+WHERE M.Name LIKE 'a_________%'	
+
+
+
 
 
 
