@@ -40,8 +40,7 @@ CREATE TABLE MovieActors(
 )
 
 
-CREATE VIEW  V_ALLNAME
-AS
+
 SELECT M.Name 'Movies',
 M.ImdbPoint 'Imdbpoint',
 G.Name 'Genres',
@@ -60,10 +59,9 @@ JOIN Actors A
 ON MA.ActorId=A.Id
 
 WHERE ImdbPoint>6
-SELECT * FROM V_ALLNAME
 
-CREATE VIEW  V_Genres
-AS
+
+
 SELECT M.Name 'Movies',
 M.ImdbPoint 'Imdbpoint',
 G.Name 'Genres'
@@ -72,25 +70,21 @@ JOIN MovieGenres MG
 ON MG.MovieId=M.Id
 JOIN Genres G
 ON MG.GenreId=G.Id
---
-SELECT * FROM V_Genres
+
 WHERE G.Name LIKE 'a%'
 
---
-CREATE VIEW  V_ALLMOVIE
-AS
 SELECT M.Name 'Movies',
 M.ImdbPoint 'Imdbpoint',
 M.Duration 'Duration',
-G.Name 'Genres'
-FROM Movies AS M
-JOIN MovieGenres AS MG
-ON MG.MovieId=M.Id
-JOIN Genres  AS G
-ON MG.GenreId=G.Id
-
-SELECT Movies  FROM V_ALLMOVIE
-WHERE M.Name LIKE 'a_________%'	
+Genres.Name 'Genres'
+FROM Movies M
+JOIN Genres 
+ON Genres.Id=M.Id
+JOIN Directors 
+ON Directors.Id=M.Id
+JOIN Actors
+ON Actors.Id=M.Id
+where len (M.Name)>10 and M.Name like '%t'
 
 
 
